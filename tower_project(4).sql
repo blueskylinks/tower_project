@@ -1,0 +1,906 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 21, 2018 at 04:22 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `tower_project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_work`
+--
+
+CREATE TABLE `add_work` (
+  `slNo` int(11) NOT NULL,
+  `add_OrderNo` varchar(20) NOT NULL,
+  `stages` varchar(20) NOT NULL,
+  `add_Description` varchar(100) NOT NULL,
+  `add_Amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_work`
+--
+
+INSERT INTO `add_work` (`slNo`, `add_OrderNo`, `stages`, `add_Description`, `add_Amount`) VALUES
+(14, '101', 'Inspection', 'Inspection Amount 2000 rs to Barma on', 2000),
+(15, '101', 'Errection', 'tower materials transportation 500 mtr\r\nloading, unloading, tractor rent', 12000),
+(16, '103', 'Errection', 'tower materials transportation \r\nloading & tractor rent', 8000),
+(17, '105', 'Errection', 'loss of days', 12000),
+(18, '108', 'Errection', 'tower materials transpo from substation to site\r\n11.km ', 15000),
+(19, '108', '', 'loss of days for no guy rope', 12000),
+(20, '108', 'Errection', '', 0),
+(21, '110', '', 'no work for high wind ', 0),
+(22, '113', 'Errection', 'materials shifting 150 mtr', 6000),
+(23, '116', 'De-Errection', 'foundational removel & loding ', 4500),
+(24, '101', 'Maintenance', 'Extra charges for generators', 6200),
+(25, '', '', '', 0),
+(26, '123', 'De-Errection', '1 loss of day for site issue ', 13000),
+(27, '129', 'Errection', '250 MTR GUY ROPE PURCHASE ', 9500),
+(28, '129', 'Errection', 'GUY ROPE TRANSPORTATION', 1000),
+(29, '125', 'De-Errection', 'TOWER MATERIALS TRANSPORTATION PALAMANEER TO\r\nCHADAWAD  DHAR', 75000),
+(30, '102', '', '', 0),
+(31, '127', 'De-Errection', 'tower materials transportation from bandameedapalli to rajkot ', 80000),
+(32, '102', '', '', 0),
+(33, '125', 'Errection', '2 boom plate , 2 core 85mtr and 3 core cable 15mtr', 6600),
+(34, '116', 'Goods', 'Transportation of tower materials form Mugvapaai to Chanwada - Dhar - Dist ', 75000),
+(35, '108', 'Errection', '1100 mtr guy rope Purchase and transportation ', 0),
+(36, '126', '', '', 0),
+(37, '141', 'Inspection', 'tower materials transportation and unlading ', 4500),
+(38, '145', 'Foundation', 'Hard rocky soil.', 0),
+(39, '142', 'Errection', 'Tower materials transportation with loading & unloading. ', 4000),
+(40, '144', 'Foundation', 'hard rocky soil', 4000),
+(41, '141', 'Foundation', 'jhhjhhjhhj', 4500),
+(42, '128', '', '', 0),
+(43, '145', 'Foundation', 'Blasting of 8 Pits .', 18000),
+(44, '130', '', '', 0),
+(45, '130', 'Errection', 'tower  materials transportation from substation to site ', 7500),
+(46, '147', 'Errection', 'Unloading amount and security charges.', 4000),
+(47, '132', '', 'Tower materials transportation for 1km . ', 600),
+(48, '132', 'Errection', 'Tower materials transportation for 1km.', 6000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `first`
+--
+
+CREATE TABLE `first` (
+  `id` int(11) NOT NULL,
+  `WorkOrderNo` varchar(30) NOT NULL,
+  `cust_wono` varchar(15) NOT NULL,
+  `SiteName` varchar(30) NOT NULL,
+  `State` varchar(30) NOT NULL,
+  `Dist` varchar(30) NOT NULL,
+  `TQ` varchar(30) NOT NULL,
+  `GPS1` varchar(30) NOT NULL,
+  `GPS2` varchar(30) NOT NULL,
+  `TypeOfTower` varchar(30) NOT NULL,
+  `heightOfTower` varchar(5) NOT NULL,
+  `EngineerName` varchar(30) NOT NULL,
+  `EngineerNo` varchar(50) NOT NULL,
+  `cust_type` varchar(20) NOT NULL,
+  `cust_name` varchar(20) NOT NULL,
+  `Contact_Person` varchar(30) NOT NULL,
+  `Cell_Number` varchar(30) NOT NULL,
+  `Editable` tinyint(1) NOT NULL DEFAULT '1',
+  `stage` varchar(20) NOT NULL,
+  `Invoice_no` varchar(30) NOT NULL,
+  `Bhoom_Oreintation` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `first`
+--
+
+INSERT INTO `first` (`id`, `WorkOrderNo`, `cust_wono`, `SiteName`, `State`, `Dist`, `TQ`, `GPS1`, `GPS2`, `TypeOfTower`, `heightOfTower`, `EngineerName`, `EngineerNo`, `cust_type`, `cust_name`, `Contact_Person`, `Cell_Number`, `Editable`, `stage`, `Invoice_no`, `Bhoom_Oreintation`) VALUES
+(21, '101', '', 'ORI', 'Gujarath', 'bhuj', 'mothilakhavda', '7867', '6678', 'LATTICE MAST', '150', 'Bharma', '9448889605', 'direct', 'RK', 'MANGESH', '7678006001', 0, 'Invoice', '250', ''),
+(22, '102', '', 'maliya', 'Gujarath', 'bhuj', 'bhuj', '123456', '123456', 'LATTICE MAST', '120', 'mallikarjuna', '123456', 'direct', 'orange', 'senthil', '9717097247', 0, 'Invoice', '269', ''),
+(23, '103', '', 'LALPARDA', 'GUJARATH', 'JAMNAGAR', 'KHAMBALIYA', '12', '12', 'LATTIC MAST', '120', 'BHARMA PATIL', '9448889605', 'direct', 'RK', 'MANGESH', '7678006001', 0, 'Invoice', '249', ''),
+(24, '104', '', 'HANSTHALA', 'GUJARATH', 'JAMNAGAR', 'KHAMBALIYA', '123456', '123456', 'LATTIC MAST', '150', 'BHARMA PATIL', '9448889605', 'direct', 'RK', 'MANGESH', '7678006001', 0, 'Invoice', '255', ''),
+(25, '105', '', 'RELADIYA MANJALA', 'GUJARATH', 'KUCH BHUJ', 'KUCH', '123456', '123456', 'LATTIC MAST', '140', 'MAHESH', '9448278283', 'indirect', 'HERO/ SHAH', 'A', '1', 0, 'Invoice', '74 ', ''),
+(26, '106', '', 'KHAVDA ', 'GUJARATH', 'KUCH BHUJ', 'KUCH', '123456', '123456', 'LATTIC MAST', '100', 'MAHESH', '9448278283', 'indirect', 'KINTECK', 'A', '1', 0, 'Invoice', '251', ''),
+(27, '107', '', 'RATADIYA', 'GUJARATH', 'KUCH BHUJ', 'KUCH', '123456', '123456', 'LATTIC MAST', '100', 'MAHESH', '9448278283', 'indirect', 'KINTECK/ RK', 'A', '1', 0, 'Invoice', '252', ''),
+(28, '108', '', 'gokhalana', 'GUJARATH', 'rajkot', 'jasdhan', '12', '12', 'LATTIC MAST', '100', 'MAHESH', '9448278283', 'direct', 'sitak/ sukavala', 'A', '1', 1, 'De-Errection', '', ''),
+(29, '109', '', 'darshanvel, 2)motikokhari, 3)b', 'GUJARATH', 'JAMNAGAR', 'KHAMBALIYA', '123456', '123456', 'LATTIC MAST', '120', 'shashidhar latte', '9686140236', 'direct', 'awt', 'murali', '9597371532', 0, 'Invoice', '256', ''),
+(30, '110', '', '1)BALASAR,2)BHESADA 3)JEMLA', 'rajastan', 'badmeer', 'shiv', '1234567', '123456', 'LATTIC MAST', '100', 'shashidhar latte', '9686140236', 'direct', 'orange', 'senthil', '9717097247', 0, '', '286/287/288', ''),
+(31, '111', '', 'telasang & peerapuram', 'karnataka', 'bijapur', 'bijapur', '123456', '123456', 'LATTIC MAST', '100', 'ravi gudige', '8762813713', 'indirect', 'feeza/ RK', 'a', '1', 0, 'Invoice', '246', ''),
+(32, '112', '', 'thandalwadi, asta, osmanabad', 'maharastra', 'osmanabad', 'asta', '12', '12', 'LATTIC MAST', '120', 'ravi gudige', '8762813713', 'direct', 'kshemapower', 'aravid', '7598824318', 0, 'Invoice', '260/270', ''),
+(33, '113', '', 'pullimandi', 'andrapradesh', 'karnool', 'nandyal', '12', '12', 'LATTIC MAST', '120', 'raghavendra', '9515201603', 'indirect', 'greenko/ RK', 'reddynna', '9959552137', 0, 'Invoice', '254', ''),
+(34, '114', '', '4 site maintenence', 'andrapradesh', 'anantapur', 'anantapur', '12', '12', 'LATTIC MAST', '120', 'narendra, praveen2 pradeep', '9550324548', 'direct', 'axies', 'narendra', '7331145621', 0, 'Invoice', '278', ''),
+(35, '115', '', 'laddigiri', 'andrapradesh', 'karnool', 'kodumur', '12', '12', 'LATTIC MAST', '120', 'narendra', '9550324548', 'indirect', 'greenko/ RK', 'reddynna', '9959552137', 0, 'Invoice', '276', '32Â°'),
+(36, '116', '', 'mogivpalli', 'andrapradesh', 'chittur', 'palamaneer', '12', '12', 'LATTIC MAST', '100', 'narendra', '9550324548', 'direct', 'sany', 'krishna', '9607633002', 0, 'Invoice', '273/274', ''),
+(37, '117', '', 'anantapur', 'andrapradesh', 'anantapur', 'anantapur', '12', '12', 'materials sales', '2', 'sreenivas', '9448126444', 'direct', 'rayala engg works', 'sudarshan', '9493352952', 0, 'Invoice', '253', ''),
+(38, '118', '', 'kaytar', 'tamilnadu', 'tirunaveli', 'kaitar', '12', '12', 'LATTIC MAST', '120', 'raghavendra', '9515201603', 'indirect', 'DNVGL/ shah', 'A', '1', 0, 'Invoice', '78', ''),
+(39, '119', '', 'pesaravai', 'andrapradesh', 'karnool', 'nandyal', '12', '12', 'LATTIC MAST', '120', 'raghavendra', '9515201603', 'indirect', 'greenko/ RK', 'reddynna', '9959552137', 0, 'Invoice', '257', ''),
+(40, '120', '', 'vedharanyam', 'tamilnadu', 'a', 'a', '12', '12', 'LATTIC MAST', '90', 'sudarshan', '9493352952', 'direct', 'kshemapower', 'shakthivel', '7598824318', 0, 'Invoice', '247', ''),
+(41, '121', '', 'Barmer', 'Rajasthan', 'Barmer', 'Barmer', '56d', '54d', 'Lattice mast', '100mt', 'Shashidhar Latte', '9686140236', 'direct', 'ORANGE', 'Mr.Manoj / Senthil', '9743276823', 0, 'Maintenance', '286/287/288', ''),
+(42, '122', '', 'vigodi, rajpar, ramaniya, bhup', 'gujarath ', 'KUCH BHUJ', 'bhuj', '12', '12', 'LATTIC MAST', '120', 'mallikarjuna', '1234567890', 'indirect', 'kp/ rk ', 'MANGESH', '7678006001', 0, 'Invoice', '261', ''),
+(43, '123', '', 'ROJMAL', 'GUJARATH', 'rajkot', 'rojmal', '12', '12', 'LATTIC MAST', '104', 'MAHESH', '9448278283', 'direct', 'sitak/ sukavala', 'arthi mem', '9899553289', 1, 'De-Errection', '', ''),
+(44, '123', '', 'itaniya', 'GUJARATH', 'rajkot', 'jasdhan', '12', '12', 'LATTIC MAST', '100', 'MAHESH', '9448278283', 'direct', 'sitak/ sukavala', 'arthi mem', '9899553289', 1, 'De-Errection', '', ''),
+(45, '124', '', 'Madhavaram', 'AP', 'Anantapur', 'Ramagiri', '14Â°\"N', '77Â°E', 'Lattice Mast', '120', 'Raghavendra', '9515201603', 'direct', 'AWT', 'Naveen', '8639779324', 0, 'Invoice', '259', ''),
+(46, '125', '', 'CHHADAWAD', 'madhyapradesh', 'dhar', 'sardarpur', '12', '12', 'LATTIC MAST', '100', 'narendra', '8309231157', 'direct', 'sany', 'harshad', '8411070011', 0, 'Invoice', '273/274/275', ''),
+(47, '126', '', 'KONAPURAM', 'andrapradesh', 'Anantapur', 'KANAGANIPALLI', '12', '12', 'LATTIC MAST', '120', 'RAJENDRA', '9676164311', 'direct', 'AWT', 'Naveen', '8639779324', 0, 'Invoice', '272', ''),
+(48, '127', '', 'BANDAMEEDAPALLI', 'andrapradesh', 'chittur', 'PUNGANOOR', '12', '12', 'LATTIC MAST', '100', 'Raghavendra', '9515201603', 'direct', 'sany', 'krishna', '9607633002', 0, 'De-Errection', '284/285', ''),
+(49, '128', '', 'MAHUVA', 'GUJARATH', 'bhavnagar', 'MAHUVA', '12', '12', 'LATTIC MAST', '130', 'MAHESH', '9448278283', 'direct', 'RK', 'MANOJ', '12', 1, 'Errection', '', ''),
+(50, '129', '', 'NAGADA', 'andrapradesh', 'JAMNAGAR', 'KHAMBALIYA', '12', '12', 'LATTIC MAST', '150', 'BHARMA PATIL', '9448889605', 'direct', 'RK', 'MANGESH', '7678006001', 0, 'Invoice', '262', ''),
+(51, '130', '', 'SATTEGERI', 'Karnaaka', 'Belgaum', 'Savdatti', '1234', '1234', 'lattice mast', '104.5', 'Ravendra n Patil', '9482217674', 'indirect', 'Shah /Sanchor Renewa', 'Mr ashok', ' 7892542870 / 9483719141', 1, 'Errection', '', ''),
+(52, '131', '', 'Gadag - 1 , 2 & 3 ,Jakkali, Sh', 'Karnataka', 'Gadag', 'Gadag', '123', '456', ' Lattice mast', '120m', 'Amul Chugale', '9482366961', 'direct', 'Orange Renewable', 'Mr.Senthil', '9790454319', 0, 'Invoice', '264/265/266/267', '24Â°'),
+(68, '132', '', 'PATAN', 'GUJARATA', 'RAJKOT', 'JAMJOHAPUR', '1234', '1234', 'lattice mast', '120 m', 'Mallikarjun(Bala)', '7981285719', 'indirect', 'SHAH INFRA/ envision', 'mr deepak', '8905826185', 1, 'Commissioning', '', '315  135'),
+(69, '133', '', 'PAYALAKURTI', 'andrapradesh', 'karnool', 'KODUMURU', '154E', '454N', 'Lattice Mast', '120', 'RAJENDRA', '9676164311', 'indirect', 'greenko/ RK', 'REDDENNA', '9164470717', 0, 'Invoice', '276/283', ''),
+(70, '134', '', 'ITANIYA', 'GUJARATH', 'rajkot', 'JASDAN', '12', '12', 'LATTIC MAST', '104', 'MAHESH', '9448278283', 'direct', 'sitak/ sukavala', 'arthi mem', '9899553289', 1, 'Foundation', '', '340/160'),
+(71, '135', '', '1)OTTAIPADARAM 2)AKILANDAPURAM', 'Tamil nadu', 'Thoothukudi', 'Ottapidaram', '1234', '1234', 'lattis mast', '140 m', 'Sudharshan ', '9493352952', 'direct', 'SHAH INFRA', 'shampat kumar', '8073519104', 1, 'Maintenance', '', ''),
+(72, '136', '', 'MOTHALA', 'gujarata', 'Kutch', 'Abdasa', '1234', '1234', 'lattice mast', '140 m', 'bala ', '7702143148', 'direct', 'SHAH/HERO', 'Anand Solanki ', '7990419964', 1, 'Commissioning', '', ''),
+(73, '137', '', 'VIRPUR NEAR GOMTA', 'Gujarat', 'Rajkot', 'Gondal', '21.853609', '70.722603Â°', 'Lattice Mast', '100 m', 'Mallikarjun (Bala Kona)', '7702143148', 'direct', 'SANY', 'Mr Harshad ', '8411070011', 0, 'Errection', '284/285', '315-135'),
+(74, '138', '', 'NIMBAGALLU PCVT 1 AND 2', 'ANDRAPRADESH', 'Anantapur', 'Nimbagallu', '1234', '1234', 'lattice mast', '104mt', 'Raghavendra', '9515201603', 'direct', 'ORANGE', 'MR Senthel', '9717097247', 0, 'Invoice', '280', ''),
+(75, '139', '', 'Reladiya Manjal', 'Gujarat', 'Bhuj', 'Abdasa', '123', '456', 'Lattice mast', '140mt', 'Cetan Patil', '9480949798', 'indirect', 'HERO', 'RUPESH', '7984122204', 1, 'Errection', '', ''),
+(76, '140', '', 'KUDALAGI', 'Karnataka', 'Bellary', 'Hospet', '123', '456', 'Lattice mast', '100mt', 'Umesh C Patil', '9483038394', 'indirect', 'RK / FIZZA', 'Noor Ahmed', '9739343338', 0, 'Invoice', '277', ''),
+(77, '141', '', 'YELBURGA', 'Karnataka', 'Koppal', 'Yelburga', '123', '456', 'Lattice mast', '110mt', 'Shankar Patil', '9448506852', 'indirect', 'SHAH/VESTAS WIND', 'Ravi Shankar', '7358052259', 1, 'Errection', '', ''),
+(78, '142', '', 'KAMBADUR', 'ANDHRAPRADESH', 'Anantapur', 'Anantapur', '123', '1233', 'LATTICE MAST', '100 m', 'Raghavendra', '9515201603', 'direct', 'Shah infra', 'sampat kumar', '8073519104', 0, 'Invoice', '86/SSRWA', ''),
+(79, '143', '', 'PATAN', 'Gujarat', 'Rajkot', 'Jamjodhpur', '123', '456', 'Lattice mast', '120mt', 'Mallikarjun', '7981285719', 'indirect', 'SHAH/ENVISION', 'Mr.Deepak', '8905826185', 1, 'Errection', '', '135-315'),
+(80, '144', '', 'CHAVADAKA', 'Gujarat', 'Kutch', 'Nakhatrana', '455', '123', 'Lattice mast', '120mt', 'Balachandra', '7702143148', 'direct', 'AWT Energy', 'Mr.Ajitsingh', '9879654051', 1, 'Foundation', '', '150-330'),
+(81, '145', '', 'KALAMBWADI', 'Gujarat', 'Rajkot', 'Kotda Sangani', '365', '123', 'Lattice mast', '120mt', 'Mallikarjun', '7981285719', 'direct', 'AWT Energy', 'Surendra Chudhari', '9828186164', 1, 'Inspection', '', '150-330'),
+(82, '146', '', 'GAITARGANJ', 'Madhya Pradesh', 'Raisen', 'Silvani', '123', '456', 'Lattice mast', '120mt', 'Mahesh Chougale', '9448278283', 'indirect', 'RK / ADANI', 'Sitaram', '7089738574', 0, 'Invoice', '282', ''),
+(83, '147', '', 'BUTTA', 'Gujarat', 'Kutch', 'Kalatalav', '123', '1234', 'Lattice mast', '120mt', 'Bharama patil', '8197889605', 'direct', 'RK', 'mangesh', '7678006001', 0, 'Invoice', '289/290', ''),
+(84, '148', '', 'BHANVAD/FATEPUR', 'Gujarat', 'Dwarka', 'bhanvad', '340', '160', 'Lattice mast', '150mt', 'Cetan Patil', '9480949798', 'direct', 'RK', 'Devyathbhai', '9428126571', 1, 'Errection', '', '160-340'),
+(85, '149', '', 'PANEYAM', 'Ap', 'Karnool', 'nandeyl', '1234', '1234', 'lattice mast', '120 m', 'Raghavendra', '9515201603', 'direct', 'RK/GREENKO', 'mangesh', '7678006001', 1, 'Maintenance', '', ''),
+(86, '150', '', 'T 4', 'Tamil nadu', 'Kovilpatti', 'Kovilpatti', '1234', '1234', 'Lattice mast', '100 m', 'Rajendra', '9676164311', 'direct', 'SITEC', 'Miss Arati', '9899553289', 1, '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logbook`
+--
+
+CREATE TABLE `logbook` (
+  `Date` date NOT NULL,
+  `SITE_NAME` varchar(35) NOT NULL,
+  `Descr` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `logbook`
+--
+
+INSERT INTO `logbook` (`Date`, `SITE_NAME`, `Descr`) VALUES
+('2018-07-14', 'chikodi', 'dfghhgnh,hjlhk.lk/.,'),
+('2018-07-15', 'Belagavi', 'njdsjfvbs,./<>?~`!@#$%^&*()_+=|[]{};:\")'),
+('2018-07-15', 'Belagavi', '\''),
+('2018-07-14', 'settigeri', 'erection from 35 mtr to 70 mtr erected and work stopped for high wind'),
+('2018-07-13', 'settigeri', 'erection start from afternoon to evening for morning rain is falling 0 to 35 mtr   '),
+('0000-00-00', 'Reladiya manjal', 'commissioning completed by kallapa team,aviation light not installed (missing in land owner house). team diverting to HERO 3RD Site Mothala'),
+('2018-07-14', 'Kutch 1 AWT 120 mtr', 'bharama team  tower Materials shifting from 250mtr and up to 80 mtr erection today  '),
+('2018-07-13', 'Fatepur', '70 mtr erection '),
+('2018-07-14', 'Fatepur', 'From Yesterday night raining at site so no work '),
+('2018-07-14', 'Kalasar', 'Bala Kona Site visit '),
+('0000-00-00', 'Rajkot-2,Kalambwadi', 'From last twos day raining at site ,Still blasting not done '),
+('2018-07-14', 'Reladiya manjal', 'commissioning completed by kallapa team,aviation light not installed (missing in land owner house). team diverting to HERO 3RD Site Mothala'),
+('2018-07-14', 'rajkot 2 ', 'From last twos day raining at site ,Still blasting not done'),
+('2018-07-16', 'Kutch 1', 'Bharama Team   commissioning complete same team diverting tO RK Butta site 120 mtr erection  '),
+('2018-07-16', 'Fatepura', 'Chetan team 150 mtr erection completed tomorrow commissioning '),
+('2018-07-16', 'Mothala', 'Kallappa team  60 mtr erection ,after noon to heavy wind so work stopped'),
+('2018-07-16', 'Sattigeri', 'Raghavendra team commissioning in complete ,after noon to raining   '),
+('2018-07-17', 'Sattigeri', 'Commissioning completed by Raghavendra,narendra & Gurubramha '),
+('2018-07-17', 'Yalaburga', '65 mtr erected'),
+('2018-07-19', 'Yalaburga', '90 mtr erected ,after noon heavy wind work stopped '),
+('2018-07-19', 'BHUTTA', 'Erection of 120mtr lattice mast Completed by Bharma Team.'),
+('2018-07-19', 'MOTHALA', 'Erection of 140mtr lattice mast is under Progress 115mtr Erected.'),
+('2018-07-18', 'MOTHALA', 'No erection carried due to heavy rain last night so Earthing did at Reladiya manjal & Hamirpar location of 140mtr lattice mast.'),
+('2018-07-18', 'BHUTTA', '80mtr Erected and work stopped due to Heavy rain.'),
+('2018-07-20', 'Yalaburga', '110 mtr erection completed ,commissioning Pending,Team diverting to Paneyam RK   '),
+('2018-07-20', 'BHUTTA', 'Commissioning of 120mtr Completed , Team joining Kallppa Team at Mothala for Commissioning.'),
+('2018-07-20', 'MOTHALA', 'Erection of 140mr lattice mast completed with the help of Bharma anna. '),
+('2018-07-20', 'CHIKODI', 'Chetan Patil team reached chikodi at Morning 6.00 am Ir - 096976 - Fr - 102251 , Total Km - 5275 km , Moula Gama .'),
+('2018-07-20', 'PANEYAM', 'rope cutting completed at PANEYAM site,58 mtr guy rope required \r\n\r\n  '),
+('2018-07-21', 'T 4,KOVILAPPATI', 'Rajendra and Praveenkumar morning 10 o clock traveling from Anantapur to Bangalore to kovilppati '),
+('2018-07-21', 'PANEYAM', 'Raghavendra team - 65 mtr erected '),
+('2018-07-21', 'MOTHALA', 'Commissioning of 140mtr lattice mast completed with the help of Bharma anna Team.\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subcontractor`
+--
+
+CREATE TABLE `subcontractor` (
+  `OrderNo` varchar(20) DEFAULT NULL,
+  `SubOrderNO` varchar(20) NOT NULL,
+  `SubContractor_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subcontractor`
+--
+
+INSERT INTO `subcontractor` (`OrderNo`, `SubOrderNO`, `SubContractor_name`) VALUES
+('101', '0', ''),
+('102', '123', 'xyz'),
+('103', '0', ''),
+('104', '0', ''),
+('105', '', ''),
+('106', '', ''),
+('107', '', ''),
+('108', '', ''),
+('109', '', ''),
+('110', '', ''),
+('111', '', ''),
+('112', '', ''),
+('113', '', ''),
+('114', '', ''),
+('115', '568', 'abcdef'),
+('116', '', ''),
+('117', '', ''),
+('118', '', ''),
+('119', '', ''),
+('120', '', ''),
+('121', '', ''),
+('122', '', ''),
+('123', '', ''),
+('124', '', 'ramana'),
+('125', '', 'mallikarjuna a'),
+('126', '', 'ramana'),
+('127', '', ''),
+('128', '', ''),
+('129', '', ''),
+('130', '', 'self'),
+('131', '', ''),
+('132', '', 'mallikarjuna a'),
+('133', '', ''),
+('134', '', 'mallikarjuna a'),
+('135', '02', 'sudharshan '),
+('136', '03', 'bala kona'),
+('137', '', 'Bala Kona'),
+('138', '', ''),
+('139', '', ''),
+('140', '', ''),
+('141', '', ''),
+('142', '', ''),
+('143', '', 'Balachandra kona'),
+('144', '', ''),
+('145', '', ''),
+('146', '', ''),
+('147', '', ''),
+('148', '', ''),
+('149', '', ''),
+('150', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `work_state`
+--
+
+CREATE TABLE `work_state` (
+  `wo_st` int(11) NOT NULL,
+  `state_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `work_state`
+--
+
+INSERT INTO `work_state` (`wo_st`, `state_name`) VALUES
+(0, 'Started'),
+(1, 'Inspection'),
+(2, 'Foundation'),
+(3, 'Errection'),
+(4, 'Commisioning'),
+(5, 'Maintenance'),
+(6, 'De-Errection'),
+(7, 'Goods'),
+(8, 'Invoice');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wo_stage`
+--
+
+CREATE TABLE `wo_stage` (
+  `st_slno` int(11) NOT NULL,
+  `wo_sno` varchar(20) NOT NULL,
+  `wo_stname` varchar(20) NOT NULL,
+  `work_stateno` int(11) NOT NULL,
+  `wo_udate` date NOT NULL,
+  `stage_comment` varchar(200) NOT NULL,
+  `steng_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `wo_stage`
+--
+
+INSERT INTO `wo_stage` (`st_slno`, `wo_sno`, `wo_stname`, `work_stateno`, `wo_udate`, `stage_comment`, `steng_name`) VALUES
+(69, '101', 'Inspection', 1, '0000-00-00', 'NO', 'RK1'),
+(70, '101', '', 2, '0000-00-00', '', ''),
+(71, '101', 'Errection', 3, '2018-06-11', 'NO', 'BHARMA'),
+(72, '101', 'Commissioning', 4, '2018-06-12', 'NO', 'BHARMA'),
+(73, '101', '', 5, '0000-00-00', '', ''),
+(74, '101', '', 6, '0000-00-00', '', ''),
+(75, '101', '', 7, '0000-00-00', '', ''),
+(76, '101', 'Invoice', 8, '2018-06-19', '250', ''),
+(77, '102', '', 1, '0000-00-00', '', ''),
+(78, '102', '', 2, '0000-00-00', '', ''),
+(79, '102', '', 3, '0000-00-00', '', ''),
+(80, '102', '', 4, '0000-00-00', '', ''),
+(81, '102', 'Maintenance', 5, '2018-06-02', 'NO', 'MALLIKARJUNA A'),
+(82, '102', 'De-Errection', 6, '0000-00-00', '', ''),
+(83, '102', '', 7, '0000-00-00', '', ''),
+(84, '102', 'Invoice', 8, '2018-06-30', '269', ''),
+(85, '103', '', 1, '0000-00-00', '', ''),
+(86, '103', '', 2, '0000-00-00', '', ''),
+(87, '103', 'Errection', 3, '2018-06-13', 'no', 'bharma'),
+(88, '103', 'Commissioning', 4, '2018-06-16', 'no', 'bharma'),
+(89, '103', '', 5, '0000-00-00', '', ''),
+(90, '103', '', 6, '0000-00-00', '', ''),
+(91, '103', '', 7, '0000-00-00', '', ''),
+(92, '103', 'Invoice', 8, '2018-06-18', '249', ''),
+(93, '104', '', 1, '0000-00-00', '', ''),
+(94, '104', 'Foundation', 2, '0000-00-00', '', ''),
+(95, '104', 'Errection', 3, '2018-06-17', 'no', 'bharma'),
+(96, '104', 'Commissioning', 4, '2018-06-21', 'no', 'bharma'),
+(97, '104', 'Maintenance', 5, '0000-00-00', '', ''),
+(98, '104', '', 6, '0000-00-00', '', ''),
+(99, '104', '', 7, '0000-00-00', '', ''),
+(100, '104', 'Invoice', 8, '2018-06-25', '255', ''),
+(101, '105', '', 1, '0000-00-00', '', ''),
+(102, '105', '', 2, '0000-00-00', '', ''),
+(103, '105', '', 3, '0000-00-00', '', ''),
+(104, '105', '', 4, '0000-00-00', '', ''),
+(105, '105', '', 5, '0000-00-00', '', ''),
+(106, '105', '', 6, '0000-00-00', '', ''),
+(107, '105', '', 7, '0000-00-00', '', ''),
+(108, '105', 'Invoice', 8, '2018-06-18', '74 ', ''),
+(109, '106', '', 1, '0000-00-00', '', ''),
+(110, '106', '', 2, '0000-00-00', '', ''),
+(111, '106', '', 3, '0000-00-00', '', ''),
+(112, '106', '', 4, '0000-00-00', '', ''),
+(113, '106', '', 5, '0000-00-00', '', ''),
+(114, '106', 'De-Errection', 6, '2018-06-11', 'no', 'mahesh'),
+(115, '106', '', 7, '0000-00-00', '', ''),
+(116, '106', 'Invoice', 8, '2018-06-18', '251', ''),
+(117, '107', '', 1, '0000-00-00', '', ''),
+(118, '107', '', 2, '0000-00-00', '', ''),
+(119, '107', 'Errection', 3, '2018-06-15', 'no', 'mahesh'),
+(120, '107', '', 4, '0000-00-00', '', ''),
+(121, '107', '', 5, '0000-00-00', '', ''),
+(122, '107', '', 6, '0000-00-00', '', ''),
+(123, '107', '', 7, '0000-00-00', '', ''),
+(124, '107', 'Invoice', 8, '2018-06-18', '252', ''),
+(125, '108', 'Inspection', 1, '2018-06-11', 'no', 'mallikarjuna'),
+(126, '108', 'Foundation', 2, '2018-06-15', 'no', 'mallikarjuna'),
+(127, '108', 'Errection', 3, '2018-06-19', 'no commissioning', 'mahesh'),
+(128, '108', 'Commissioning', 4, '2018-06-27', 'commissioning compalet', 'Bharam patil'),
+(129, '108', 'Maintenance', 5, '0000-00-00', '', ''),
+(130, '108', 'De-Errection', 6, '0000-00-00', '', ''),
+(131, '108', '', 7, '0000-00-00', '', ''),
+(132, '108', '', 8, '0000-00-00', '', ''),
+(133, '109', '', 1, '0000-00-00', '', ''),
+(134, '109', '', 2, '0000-00-00', '', ''),
+(135, '109', '', 3, '0000-00-00', '', ''),
+(136, '109', '', 4, '0000-00-00', '', ''),
+(137, '109', 'Maintenance', 5, '2018-06-11', '11,12,13 three site maintenence', 'shashidhar latte'),
+(138, '109', '', 6, '0000-00-00', '', ''),
+(139, '109', '', 7, '0000-00-00', '', ''),
+(140, '109', 'Invoice', 8, '2018-06-25', '256', ''),
+(141, '109', '', 1, '0000-00-00', '', ''),
+(142, '109', '', 2, '0000-00-00', '', ''),
+(143, '109', '', 3, '0000-00-00', '', ''),
+(144, '109', '', 4, '0000-00-00', '', ''),
+(145, '109', '', 5, '0000-00-00', '', ''),
+(146, '109', '', 6, '0000-00-00', '', ''),
+(147, '109', '', 7, '0000-00-00', '', ''),
+(148, '109', '', 8, '0000-00-00', '', ''),
+(149, '111', '', 1, '0000-00-00', '', ''),
+(150, '111', '', 2, '0000-00-00', '', ''),
+(151, '111', '', 3, '0000-00-00', '', ''),
+(152, '111', '', 4, '0000-00-00', '', ''),
+(153, '111', 'Maintenance', 5, '2018-06-14', 'loger mainte 2 sites', 'ravi gudige '),
+(154, '111', '', 6, '0000-00-00', '', ''),
+(155, '111', '', 7, '0000-00-00', '', ''),
+(156, '111', 'Invoice', 8, '2018-06-18', '246', ''),
+(157, '112', '', 1, '0000-00-00', '', ''),
+(158, '112', '', 2, '0000-00-00', '', ''),
+(159, '112', '', 3, '0000-00-00', '', ''),
+(160, '112', '', 4, '0000-00-00', '', ''),
+(161, '112', 'Maintenance', 5, '2018-06-17', '17,19&20 3 site maintenence', 'ravi gudige'),
+(162, '112', '', 6, '0000-00-00', '', ''),
+(163, '112', '', 7, '0000-00-00', '', ''),
+(164, '112', 'Invoice', 8, '2018-07-03', '260/270', ''),
+(165, '113', '', 1, '0000-00-00', '', ''),
+(166, '113', '', 2, '0000-00-00', '', ''),
+(167, '113', 'Errection', 3, '2018-06-04', 'materials thefting', 'raghavendra'),
+(168, '113', 'Commissioning', 4, '2018-06-05', 'no', 'raghavendra'),
+(169, '113', '', 5, '0000-00-00', '', ''),
+(170, '113', '', 6, '0000-00-00', '', ''),
+(171, '113', '', 7, '0000-00-00', '', ''),
+(172, '113', 'Invoice', 8, '2018-06-18', '254', ''),
+(173, '114', '', 1, '0000-00-00', '', ''),
+(174, '114', '', 2, '0000-00-00', '', ''),
+(175, '114', '', 3, '0000-00-00', '', ''),
+(176, '114', '', 4, '0000-00-00', '', ''),
+(177, '114', 'Maintenance', 5, '2018-06-05', '4 sites maintenence', 'narendra, praveen2, pradeep'),
+(178, '114', '', 6, '0000-00-00', '', ''),
+(179, '114', '', 7, '0000-00-00', '', ''),
+(180, '114', 'Invoice', 8, '2018-07-09', '278', ''),
+(181, '115', '', 1, '0000-00-00', '', ''),
+(182, '115', '', 2, '0000-00-00', '', ''),
+(183, '115', 'Errection', 3, '2018-07-06', '', 'Rajendra'),
+(184, '115', 'Commissioning', 4, '2018-07-07', '', 'rajendra'),
+(185, '115', '', 5, '0000-00-00', '', ''),
+(186, '115', '', 6, '0000-00-00', '', ''),
+(187, '115', '', 7, '0000-00-00', '', ''),
+(188, '115', 'Invoice', 8, '2018-07-09', '276', ''),
+(189, '116', '', 1, '0000-00-00', '', ''),
+(190, '116', '', 2, '0000-00-00', '', ''),
+(191, '116', '', 3, '0000-00-00', '', ''),
+(192, '116', '', 4, '0000-00-00', '', ''),
+(193, '116', '', 5, '0000-00-00', '', ''),
+(194, '116', 'De-Errection', 6, '2018-06-17', 'no', 'narendra'),
+(195, '116', '', 7, '0000-00-00', '', ''),
+(196, '116', 'Invoice', 8, '2018-07-09', '273/274', ''),
+(197, '117', '', 1, '0000-00-00', '', ''),
+(198, '117', '', 2, '0000-00-00', '', ''),
+(199, '117', '', 3, '0000-00-00', '', ''),
+(200, '117', '', 4, '0000-00-00', '', ''),
+(201, '117', '', 5, '0000-00-00', '', ''),
+(202, '117', '', 6, '0000-00-00', '', ''),
+(203, '117', 'Goods', 7, '2018-06-16', 'animometer supley', 'ganesh rk'),
+(204, '117', 'Invoice', 8, '2018-06-18', '253', ''),
+(205, '118', '', 1, '0000-00-00', '', ''),
+(206, '118', '', 2, '0000-00-00', '', ''),
+(207, '118', '', 3, '0000-00-00', '', ''),
+(208, '118', '', 4, '0000-00-00', '', ''),
+(209, '118', 'Maintenance', 5, '2018-06-17', 'maintenence', 'raghavendra'),
+(210, '118', '', 6, '0000-00-00', '', ''),
+(211, '118', '', 7, '0000-00-00', '', ''),
+(212, '118', 'Invoice', 8, '2018-06-25', '78', ''),
+(213, '119', '', 1, '0000-00-00', '', ''),
+(214, '119', '', 2, '0000-00-00', '', ''),
+(215, '119', 'Errection', 3, '2018-06-20', 'no', 'raghavendra'),
+(216, '119', 'Commissioning', 4, '2018-06-21', 'no', 'raghavendra'),
+(217, '119', '', 5, '0000-00-00', '', ''),
+(218, '119', '', 6, '0000-00-00', '', ''),
+(219, '119', '', 7, '0000-00-00', '', ''),
+(220, '119', 'Invoice', 8, '2018-06-25', '257', ''),
+(221, '120', 'Inspection', 1, '0000-00-00', '', ''),
+(222, '120', '', 2, '0000-00-00', '', ''),
+(223, '120', '', 3, '0000-00-00', '', ''),
+(224, '120', '', 4, '0000-00-00', '', ''),
+(225, '120', 'Maintenance', 5, '2018-06-04', 'rope replecement1', 'sudarshan'),
+(226, '120', '', 6, '0000-00-00', '', ''),
+(227, '120', '', 7, '0000-00-00', '', ''),
+(228, '120', 'Invoice', 8, '2018-06-18', '247', ''),
+(229, '121', 'Inspection', 1, '0000-00-00', '', ''),
+(230, '121', 'Foundation', 2, '0000-00-00', '', ''),
+(231, '121', '', 3, '0000-00-00', '', ''),
+(232, '121', 'Commissioning', 4, '0000-00-00', '', ''),
+(233, '121', 'Maintenance', 5, '2018-07-14', '', 'shashidhar latte'),
+(234, '121', '', 6, '0000-00-00', '', ''),
+(235, '121', '', 7, '0000-00-00', '', ''),
+(236, '121', 'Invoice', 8, '2018-07-12', '286/287/288', ''),
+(237, '122', '', 1, '0000-00-00', '', ''),
+(238, '122', '', 2, '0000-00-00', '', ''),
+(239, '122', '', 3, '0000-00-00', '', ''),
+(240, '122', '', 4, '0000-00-00', '', ''),
+(241, '122', 'Maintenance', 5, '2018-06-04', '3+2=5  sites', 'MALLIKARJUNA A'),
+(242, '122', '', 6, '0000-00-00', '', ''),
+(243, '122', '', 7, '0000-00-00', '', ''),
+(244, '122', 'Invoice', 8, '2018-06-25', '261', ''),
+(245, '123', '', 1, '0000-00-00', '', ''),
+(246, '123', 'Foundation', 2, '2018-06-18', 'foundation completed', 'mallikarjun (Bala)'),
+(247, '123', '', 3, '0000-00-00', '', ''),
+(248, '123', '', 4, '0000-00-00', '', ''),
+(249, '123', '', 5, '0000-00-00', '', ''),
+(250, '123', 'De-Errection', 6, '0000-00-00', '', ''),
+(251, '123', '', 7, '0000-00-00', '', ''),
+(252, '123', '', 8, '0000-00-00', '', ''),
+(253, '123', '', 1, '0000-00-00', '', ''),
+(254, '123', '', 2, '0000-00-00', '', ''),
+(255, '123', '', 3, '0000-00-00', '', ''),
+(256, '123', '', 4, '0000-00-00', '', ''),
+(257, '123', '', 5, '0000-00-00', '', ''),
+(258, '123', '', 6, '0000-00-00', '', ''),
+(259, '123', '', 7, '0000-00-00', '', ''),
+(260, '123', '', 8, '0000-00-00', '', ''),
+(261, '124', 'Inspection', 1, '2018-06-14', 'No', 'Ramana'),
+(262, '124', 'Foundation', 2, '2018-06-17', 'no', 'Ramana'),
+(263, '124', 'Errection', 3, '2018-06-25', 'no', 'raghavendra'),
+(264, '124', 'Commissioning', 4, '2018-06-26', 'NO', 'raghavendra'),
+(265, '124', '', 5, '0000-00-00', '', ''),
+(266, '124', '', 6, '0000-00-00', '', ''),
+(267, '124', '', 7, '0000-00-00', '', ''),
+(268, '124', 'Invoice', 8, '2018-06-25', '259', ''),
+(269, '125', 'Inspection', 1, '2018-06-20', 'NO', 'mallikarjuna  A'),
+(270, '125', 'Foundation', 2, '2018-06-26', 'RAIN', 'mallikarjuna a'),
+(271, '125', 'Errection', 3, '2018-07-06', '', 'Mahesh Chougale'),
+(272, '125', 'Commissioning', 4, '2018-07-07', '', 'Mahesh Chougale'),
+(273, '125', '', 5, '0000-00-00', '', ''),
+(274, '125', '', 6, '0000-00-00', '', ''),
+(275, '125', '', 7, '0000-00-00', '', ''),
+(276, '125', 'Invoice', 8, '2018-07-09', '273/274/275', ''),
+(277, '126', '', 1, '0000-00-00', '', ''),
+(278, '126', 'Foundation', 2, '2018-06-26', 'NO', 'RAMANA'),
+(279, '126', 'Errection', 3, '2018-06-28', '120 mtr erection ', 'rajendra'),
+(280, '126', 'Commissioning', 4, '2018-07-30', '', 'Rajendra'),
+(281, '126', '', 5, '0000-00-00', '', ''),
+(282, '126', '', 6, '0000-00-00', '', ''),
+(283, '126', '', 7, '0000-00-00', '', ''),
+(284, '126', 'Invoice', 8, '2018-07-09', '272', ''),
+(285, '127', '', 1, '0000-00-00', '', ''),
+(286, '127', '', 2, '0000-00-00', '', ''),
+(287, '127', '', 3, '0000-00-00', '', ''),
+(288, '127', '', 4, '0000-00-00', '', ''),
+(289, '127', '', 5, '0000-00-00', '', ''),
+(290, '127', 'De-Errection', 6, '2018-06-27', 'no', 'RAGHAVENDRA'),
+(291, '127', '', 7, '0000-00-00', '', ''),
+(292, '127', 'Invoice', 8, '2018-07-12', '284/285', ''),
+(293, '128', '', 1, '0000-00-00', '', ''),
+(294, '128', 'Foundation', 2, '0000-00-00', 'Civil done be Rk Team.', ''),
+(295, '128', 'Errection', 3, '2018-07-04', '130 mtr erection completed and commissining Pending', 'Chetan Patil'),
+(296, '128', '', 4, '0000-00-00', '', ''),
+(297, '128', '', 5, '0000-00-00', '', ''),
+(298, '128', '', 6, '0000-00-00', '', ''),
+(299, '128', '', 7, '0000-00-00', '', ''),
+(300, '128', '', 8, '0000-00-00', '', ''),
+(301, '129', '', 1, '0000-00-00', '', ''),
+(302, '129', '', 2, '0000-00-00', '', ''),
+(303, '129', 'Errection', 3, '2018-06-25', 'NO', 'BHARMA'),
+(304, '129', 'Commissioning', 4, '2018-06-26', 'NO CLASS 1 ANIMO', 'BHARMA'),
+(305, '129', '', 5, '0000-00-00', '', ''),
+(306, '129', '', 6, '0000-00-00', '', ''),
+(307, '129', '', 7, '0000-00-00', '', ''),
+(308, '129', 'Invoice', 8, '2018-06-26', '262', ''),
+(309, '130', 'Inspection', 1, '2018-06-28', 'MARKING', 'RAVI N'),
+(310, '130', 'Foundation', 2, '2018-07-03', 'foundation complete', 'Chiddanand And Ravi'),
+(311, '130', 'Errection', 3, '2018-07-14', '', 'Raghavendra '),
+(312, '130', '', 4, '0000-00-00', '', ''),
+(313, '130', '', 5, '0000-00-00', '', ''),
+(314, '130', '', 6, '0000-00-00', '', ''),
+(315, '130', '', 7, '0000-00-00', '', ''),
+(316, '130', '', 8, '0000-00-00', '', ''),
+(317, '131', '', 1, '0000-00-00', '', ''),
+(318, '131', '', 2, '0000-00-00', '', ''),
+(319, '131', '', 3, '0000-00-00', '', ''),
+(320, '131', '', 4, '0000-00-00', '', ''),
+(321, '131', 'Maintenance', 5, '2018-06-28', 'From 26-6-2018-28-2018', 'Amul Chiugale'),
+(322, '131', '', 6, '0000-00-00', '', ''),
+(323, '131', '', 7, '0000-00-00', '', ''),
+(324, '131', 'Invoice', 8, '2018-06-26', '264/265/266/267', ''),
+(325, '132', '', 1, '0000-00-00', '', ''),
+(326, '132', 'Foundation', 2, '2018-07-02', 'Digging compalet', 'Mallikarju Bala'),
+(327, '132', '', 3, '0000-00-00', '', ''),
+(328, '132', 'Commissioning', 4, '2018-07-11', '', 'Chetan Patil'),
+(329, '132', '', 5, '0000-00-00', '', ''),
+(330, '132', '', 6, '0000-00-00', '', ''),
+(331, '132', '', 7, '0000-00-00', '', ''),
+(332, '132', '', 8, '0000-00-00', '', ''),
+(333, '132', '', 1, '0000-00-00', '', ''),
+(334, '132', '', 2, '0000-00-00', '', ''),
+(335, '132', '', 3, '0000-00-00', '', ''),
+(336, '132', '', 4, '0000-00-00', '', ''),
+(337, '132', '', 5, '0000-00-00', '', ''),
+(338, '132', '', 6, '0000-00-00', '', ''),
+(339, '132', '', 7, '0000-00-00', '', ''),
+(340, '132', '', 8, '0000-00-00', '', ''),
+(341, '132', '', 1, '0000-00-00', '', ''),
+(342, '132', '', 2, '0000-00-00', '', ''),
+(343, '132', '', 3, '0000-00-00', '', ''),
+(344, '132', '', 4, '0000-00-00', '', ''),
+(345, '132', '', 5, '0000-00-00', '', ''),
+(346, '132', '', 6, '0000-00-00', '', ''),
+(347, '132', '', 7, '0000-00-00', '', ''),
+(348, '132', '', 8, '0000-00-00', '', ''),
+(349, '132', '', 1, '0000-00-00', '', ''),
+(350, '132', '', 2, '0000-00-00', '', ''),
+(351, '132', '', 3, '0000-00-00', '', ''),
+(352, '132', '', 4, '0000-00-00', '', ''),
+(353, '132', '', 5, '0000-00-00', '', ''),
+(354, '132', '', 6, '0000-00-00', '', ''),
+(355, '132', '', 7, '0000-00-00', '', ''),
+(356, '132', '', 8, '0000-00-00', '', ''),
+(357, '132', '', 1, '0000-00-00', '', ''),
+(358, '132', '', 2, '0000-00-00', '', ''),
+(359, '132', '', 3, '0000-00-00', '', ''),
+(360, '132', '', 4, '0000-00-00', '', ''),
+(361, '132', '', 5, '0000-00-00', '', ''),
+(362, '132', '', 6, '0000-00-00', '', ''),
+(363, '132', '', 7, '0000-00-00', '', ''),
+(364, '132', '', 8, '0000-00-00', '', ''),
+(365, '132', '', 1, '0000-00-00', '', ''),
+(366, '132', '', 2, '0000-00-00', '', ''),
+(367, '132', '', 3, '0000-00-00', '', ''),
+(368, '132', '', 4, '0000-00-00', '', ''),
+(369, '132', '', 5, '0000-00-00', '', ''),
+(370, '132', '', 6, '0000-00-00', '', ''),
+(371, '132', '', 7, '0000-00-00', '', ''),
+(372, '132', '', 8, '0000-00-00', '', ''),
+(373, '132', '', 1, '0000-00-00', '', ''),
+(374, '132', '', 2, '0000-00-00', '', ''),
+(375, '132', '', 3, '0000-00-00', '', ''),
+(376, '132', '', 4, '0000-00-00', '', ''),
+(377, '132', '', 5, '0000-00-00', '', ''),
+(378, '132', '', 6, '0000-00-00', '', ''),
+(379, '132', '', 7, '0000-00-00', '', ''),
+(380, '132', '', 8, '0000-00-00', '', ''),
+(381, '132', '', 1, '0000-00-00', '', ''),
+(382, '132', '', 2, '0000-00-00', '', ''),
+(383, '132', '', 3, '0000-00-00', '', ''),
+(384, '132', '', 4, '0000-00-00', '', ''),
+(385, '132', '', 5, '0000-00-00', '', ''),
+(386, '132', '', 6, '0000-00-00', '', ''),
+(387, '132', '', 7, '0000-00-00', '', ''),
+(388, '132', '', 8, '0000-00-00', '', ''),
+(389, '132', '', 1, '0000-00-00', '', ''),
+(390, '132', '', 2, '0000-00-00', '', ''),
+(391, '132', '', 3, '0000-00-00', '', ''),
+(392, '132', '', 4, '0000-00-00', '', ''),
+(393, '132', '', 5, '0000-00-00', '', ''),
+(394, '132', '', 6, '0000-00-00', '', ''),
+(395, '132', '', 7, '0000-00-00', '', ''),
+(396, '132', '', 8, '0000-00-00', '', ''),
+(397, '132', '', 1, '0000-00-00', '', ''),
+(398, '132', '', 2, '0000-00-00', '', ''),
+(399, '132', '', 3, '0000-00-00', '', ''),
+(400, '132', '', 4, '0000-00-00', '', ''),
+(401, '132', '', 5, '0000-00-00', '', ''),
+(402, '132', '', 6, '0000-00-00', '', ''),
+(403, '132', '', 7, '0000-00-00', '', ''),
+(404, '132', '', 8, '0000-00-00', '', ''),
+(405, '132', '', 1, '0000-00-00', '', ''),
+(406, '132', '', 2, '0000-00-00', '', ''),
+(407, '132', '', 3, '0000-00-00', '', ''),
+(408, '132', '', 4, '0000-00-00', '', ''),
+(409, '132', '', 5, '0000-00-00', '', ''),
+(410, '132', '', 6, '0000-00-00', '', ''),
+(411, '132', '', 7, '0000-00-00', '', ''),
+(412, '132', '', 8, '0000-00-00', '', ''),
+(413, '132', '', 1, '0000-00-00', '', ''),
+(414, '132', '', 2, '0000-00-00', '', ''),
+(415, '132', '', 3, '0000-00-00', '', ''),
+(416, '132', '', 4, '0000-00-00', '', ''),
+(417, '132', '', 5, '0000-00-00', '', ''),
+(418, '132', '', 6, '0000-00-00', '', ''),
+(419, '132', '', 7, '0000-00-00', '', ''),
+(420, '132', '', 8, '0000-00-00', '', ''),
+(421, '132', '', 1, '0000-00-00', '', ''),
+(422, '132', '', 2, '0000-00-00', '', ''),
+(423, '132', '', 3, '0000-00-00', '', ''),
+(424, '132', '', 4, '0000-00-00', '', ''),
+(425, '132', '', 5, '0000-00-00', '', ''),
+(426, '132', '', 6, '0000-00-00', '', ''),
+(427, '132', '', 7, '0000-00-00', '', ''),
+(428, '132', '', 8, '0000-00-00', '', ''),
+(429, '132', '', 1, '0000-00-00', '', ''),
+(430, '132', '', 2, '0000-00-00', '', ''),
+(431, '132', '', 3, '0000-00-00', '', ''),
+(432, '132', '', 4, '0000-00-00', '', ''),
+(433, '132', '', 5, '0000-00-00', '', ''),
+(434, '132', '', 6, '0000-00-00', '', ''),
+(435, '132', '', 7, '0000-00-00', '', ''),
+(436, '132', '', 8, '0000-00-00', '', ''),
+(437, '132', '', 1, '0000-00-00', '', ''),
+(438, '132', '', 2, '0000-00-00', '', ''),
+(439, '132', '', 3, '0000-00-00', '', ''),
+(440, '132', '', 4, '0000-00-00', '', ''),
+(441, '132', '', 5, '0000-00-00', '', ''),
+(442, '132', '', 6, '0000-00-00', '', ''),
+(443, '132', '', 7, '0000-00-00', '', ''),
+(444, '132', '', 8, '0000-00-00', '', ''),
+(445, '133', '', 1, '0000-00-00', '', ''),
+(446, '133', '', 2, '0000-00-00', '', ''),
+(447, '133', 'Errection', 3, '2018-07-04', '105 mtr Erected heavy wind work stoped', 'Rajendra'),
+(448, '133', 'Commissioning', 4, '2018-07-05', '120 mtr erection and commissining also completed', 'Rajendra'),
+(449, '133', '', 5, '0000-00-00', '', ''),
+(450, '133', '', 6, '0000-00-00', '', ''),
+(451, '133', '', 7, '0000-00-00', '', ''),
+(452, '133', 'Invoice', 8, '2018-07-09', '276/283', ''),
+(453, '134', '', 1, '0000-00-00', '', ''),
+(454, '134', 'Foundation', 2, '2018-06-18', 'NO ISSUE', 'mallikarjuna a'),
+(455, '134', '', 3, '0000-00-00', '', ''),
+(456, '134', '', 4, '0000-00-00', '', ''),
+(457, '134', '', 5, '0000-00-00', '', ''),
+(458, '134', '', 6, '0000-00-00', '', ''),
+(459, '134', '', 7, '0000-00-00', '', ''),
+(460, '134', '', 8, '0000-00-00', '', ''),
+(461, '135', '', 1, '0000-00-00', '', ''),
+(462, '135', '', 2, '0000-00-00', '', ''),
+(463, '135', '', 3, '0000-00-00', '', ''),
+(464, '135', '', 4, '0000-00-00', '', ''),
+(465, '135', 'Maintenance', 5, '2018-07-02', 'no', 'Sudharshan '),
+(466, '135', '', 6, '0000-00-00', '', ''),
+(467, '135', '', 7, '0000-00-00', '', ''),
+(468, '135', '', 8, '0000-00-00', '', ''),
+(469, '136', 'Inspection', 1, '2018-07-02', 'MARKING', 'bala kona'),
+(470, '136', 'Foundation', 2, '2018-07-07', '', 'bala kona'),
+(471, '136', 'Errection', 3, '2018-07-12', '', 'Kalagouda Patil'),
+(472, '136', 'Commissioning', 4, '0000-00-00', '', ''),
+(473, '136', '', 5, '0000-00-00', '', ''),
+(474, '136', '', 6, '0000-00-00', '', ''),
+(475, '136', '', 7, '0000-00-00', '', ''),
+(476, '136', '', 8, '0000-00-00', '', ''),
+(477, '137', 'Inspection', 1, '2018-07-04', '', 'Mallikarjun (Bala k)'),
+(478, '137', 'Foundation', 2, '2018-07-08', '', 'Mallikarjun ( Bala K)'),
+(479, '137', 'Errection', 3, '2018-07-11', '', 'Bharma Patil'),
+(480, '137', '', 4, '0000-00-00', '', ''),
+(481, '137', '', 5, '0000-00-00', '', ''),
+(482, '137', '', 6, '0000-00-00', '', ''),
+(483, '137', '', 7, '0000-00-00', '', ''),
+(484, '137', 'Invoice', 8, '2018-07-12', '284/285', ''),
+(485, '138', '', 1, '0000-00-00', '', ''),
+(486, '138', '', 2, '0000-00-00', '', ''),
+(487, '138', '', 3, '0000-00-00', '', ''),
+(488, '138', 'Commissioning', 4, '2018-07-04', '', 'Raghavendra /  Guru Brahma'),
+(489, '138', 'Maintenance', 5, '2018-07-04', 'as per WO maintenance compalet', 'Raghavendra'),
+(490, '138', '', 6, '0000-00-00', '', ''),
+(491, '138', '', 7, '0000-00-00', '', ''),
+(492, '138', 'Invoice', 8, '2018-07-10', '280', ''),
+(493, '139', '', 1, '0000-00-00', '', ''),
+(494, '139', '', 2, '0000-00-00', '', ''),
+(495, '139', 'Errection', 3, '2018-07-17', '', 'chetan s patil'),
+(496, '139', '', 4, '0000-00-00', '', ''),
+(497, '139', '', 5, '0000-00-00', '', ''),
+(498, '139', '', 6, '0000-00-00', '', ''),
+(499, '139', '', 7, '0000-00-00', '', ''),
+(500, '139', '', 8, '0000-00-00', '', ''),
+(501, '140', '', 1, '0000-00-00', '', ''),
+(502, '140', '', 2, '0000-00-00', '', ''),
+(503, '140', '', 3, '0000-00-00', '', ''),
+(504, '140', 'Commissioning', 4, '2018-07-05', 'Sagar Patil', 'Umesh C Patil'),
+(505, '140', '', 5, '0000-00-00', '', ''),
+(506, '140', '', 6, '0000-00-00', '', ''),
+(507, '140', '', 7, '0000-00-00', '', ''),
+(508, '140', 'Invoice', 8, '2018-07-09', '277', ''),
+(509, '141', '', 1, '0000-00-00', '', ''),
+(510, '141', 'Foundation', 2, '2018-07-08', 'NO', 'shankar a patil'),
+(511, '141', 'Errection', 3, '2018-07-20', '', 'Raghavendra'),
+(512, '141', '', 4, '0000-00-00', '', ''),
+(513, '141', '', 5, '0000-00-00', '', ''),
+(514, '141', '', 6, '0000-00-00', '', ''),
+(515, '141', '', 7, '0000-00-00', '', ''),
+(516, '141', '', 8, '0000-00-00', '', ''),
+(517, '142', '', 1, '0000-00-00', '', ''),
+(518, '142', '', 2, '0000-00-00', '', ''),
+(519, '142', '', 3, '0000-00-00', '', ''),
+(520, '142', 'Commissioning', 4, '2018-07-07', 'no', 'Raghavendra'),
+(521, '142', '', 5, '0000-00-00', '', ''),
+(522, '142', '', 6, '0000-00-00', '', ''),
+(523, '142', '', 7, '0000-00-00', '', ''),
+(524, '142', 'Invoice', 8, '2018-07-10', '86/SSRWA', ''),
+(525, '143', '', 1, '0000-00-00', '', ''),
+(526, '143', 'Foundation', 2, '2018-07-02', '', 'Mallikarjun ( Bala K)'),
+(527, '143', 'Errection', 3, '2018-07-10', '120mtr completed + Commissioning under progress', 'Chetan Patil'),
+(528, '143', '', 4, '0000-00-00', '', ''),
+(529, '143', '', 5, '0000-00-00', '', ''),
+(530, '143', '', 6, '0000-00-00', '', ''),
+(531, '143', '', 7, '0000-00-00', '', ''),
+(532, '143', '', 8, '0000-00-00', '', ''),
+(533, '144', 'Inspection', 1, '2018-07-08', '120mtr lattice', 'bala kona'),
+(534, '144', 'Foundation', 2, '2018-07-12', '', 'Balachandra Kona'),
+(535, '144', '', 3, '0000-00-00', '', ''),
+(536, '144', '', 4, '0000-00-00', '', ''),
+(537, '144', '', 5, '0000-00-00', '', ''),
+(538, '144', '', 6, '0000-00-00', '', ''),
+(539, '144', '', 7, '0000-00-00', '', ''),
+(540, '144', '', 8, '0000-00-00', '', ''),
+(541, '145', 'Inspection', 1, '2018-07-09', 'blasting', 'mallikarjuna  A'),
+(542, '145', 'Foundation', 2, '2018-07-21', '', 'dfdfdfd'),
+(543, '145', '', 3, '0000-00-00', '', ''),
+(544, '145', '', 4, '0000-00-00', '', ''),
+(545, '145', '', 5, '0000-00-00', '', ''),
+(546, '145', '', 6, '0000-00-00', '', ''),
+(547, '145', '', 7, '0000-00-00', '', ''),
+(548, '145', '', 8, '0000-00-00', '', ''),
+(549, '146', '', 1, '0000-00-00', '', ''),
+(550, '146', '', 2, '0000-00-00', '', ''),
+(551, '146', '', 3, '0000-00-00', '', ''),
+(552, '146', '', 4, '0000-00-00', '', ''),
+(553, '146', '', 5, '0000-00-00', '', ''),
+(554, '146', 'De-Errection', 6, '2018-07-09', '120mtr De-Completed', 'Mahesh Chougale'),
+(555, '146', '', 7, '0000-00-00', '', ''),
+(556, '146', 'Invoice', 8, '2018-07-10', '282', ''),
+(557, '147', '', 1, '0000-00-00', '', ''),
+(558, '147', '', 2, '0000-00-00', '', ''),
+(559, '147', 'Errection', 3, '2018-07-19', '', 'Bharma Patil'),
+(560, '147', '', 4, '0000-00-00', '', ''),
+(561, '147', '', 5, '0000-00-00', '', ''),
+(562, '147', '', 6, '0000-00-00', '', ''),
+(563, '147', '', 7, '0000-00-00', '', ''),
+(564, '147', 'Invoice', 8, '2018-07-20', '289/290', ''),
+(565, '148', '', 1, '0000-00-00', '', ''),
+(566, '148', '', 2, '0000-00-00', '', ''),
+(567, '148', 'Errection', 3, '2018-07-17', '', 'Chetan Patil'),
+(568, '148', 'Commissioning', 4, '2018-07-20', '', ',L;KNM'),
+(569, '148', '', 5, '0000-00-00', '', ''),
+(570, '148', '', 6, '0000-00-00', '', ''),
+(571, '148', '', 7, '0000-00-00', '', ''),
+(572, '148', '', 8, '0000-00-00', '', ''),
+(573, '149', '', 1, '0000-00-00', '', ''),
+(574, '149', '', 2, '0000-00-00', '', ''),
+(575, '149', 'Errection', 3, '2018-07-20', '', 'rajendra'),
+(576, '149', 'Commissioning', 4, '2018-07-11', '', ''),
+(577, '149', 'Maintenance', 5, '0000-00-00', '', ''),
+(578, '149', '', 6, '0000-00-00', '', ''),
+(579, '149', '', 7, '0000-00-00', '', ''),
+(580, '149', '', 8, '0000-00-00', '', ''),
+(581, '150', '', 1, '0000-00-00', '', ''),
+(582, '150', '', 2, '0000-00-00', '', ''),
+(583, '150', '', 3, '0000-00-00', '', ''),
+(584, '150', '', 4, '0000-00-00', '', ''),
+(585, '150', 'Maintenance', 5, '2018-07-21', '', 'Rajendra & Praveen'),
+(586, '150', '', 6, '0000-00-00', '', ''),
+(587, '150', '', 7, '0000-00-00', '', ''),
+(588, '150', '', 8, '0000-00-00', '', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `add_work`
+--
+ALTER TABLE `add_work`
+  ADD PRIMARY KEY (`slNo`);
+
+--
+-- Indexes for table `first`
+--
+ALTER TABLE `first`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subcontractor`
+--
+ALTER TABLE `subcontractor`
+  ADD KEY `orderno` (`OrderNo`);
+
+--
+-- Indexes for table `wo_stage`
+--
+ALTER TABLE `wo_stage`
+  ADD PRIMARY KEY (`st_slno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `add_work`
+--
+ALTER TABLE `add_work`
+  MODIFY `slNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `first`
+--
+ALTER TABLE `first`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+
+--
+-- AUTO_INCREMENT for table `wo_stage`
+--
+ALTER TABLE `wo_stage`
+  MODIFY `st_slno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=589;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
